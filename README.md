@@ -1,6 +1,6 @@
 # AirportOOP-typescript-webpack
 
-###Create classes with properties representing the following:
+### Create classes with properties representing the following:
 ● Person - name, surname
 ● Seat - number, category (can be 'b'; for business or 'e' for economy)
 ● Passenger - person (instance of Person), seat (instance of Seat)
