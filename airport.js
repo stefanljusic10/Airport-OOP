@@ -4,17 +4,13 @@
 function Person(name, surname){
     this.name = name,
     this.surname = surname
-    this.getData = function(){
-        return this.name + ' ' + this.surname
-    }
+    this.getData = () => this.name + ' ' + this.surname
 }
 
 function Seat(number, category){
     this.number = (typeof number === 'number') ? number : Math.floor(Math.random() * 90) + 10
     this.category = (category === 'b') ? 'b' : 'e'
-    this.getData = function(){
-        return this.number + ' ' + this.category.toUpperCase()
-    }
+    this.getData = () => this.number + ' ' + this.category.toUpperCase()
 }
 
 function Passenger(person, seat){
@@ -30,12 +26,12 @@ function Flight(relation, date){
     this.passengers = []
 
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let formatDate = monthNames[this.date.getMonth()] + ' ' + this.date.getDay() + ', ' + this.date.getFullYear()
+    const formatDate = '  ' + monthNames[this.date.getMonth()] + ' ' + this.date.getDay() + ', ' + this.date.getFullYear() +', ' + this.relation + '\n'
 
-    this.addPassenger = function(passenger){
+    this.addPassenger = (passenger) => {
         this.passengers.push(passenger)
     }
-    this.getData = () => '  ' + formatDate + ', ' + this.relation + '\n' + this.passengers.map((pass) => '    ' + pass.getData() + '\n')
+    this.getData = () => formatDate + this.passengers.map((pass) => '    ' + pass.getData() + '\n')
 }
 
 function Airport(){
@@ -44,15 +40,13 @@ function Airport(){
     this.addFlight = function(flight){
         this.flights.push(flight)
     }
-    this.getData = function(){
+    this.getData = () => {
         let totalPassengers = 0
-        let allFlights = this.flights.flat()
-        let formatFlights = this.flights.map((flight) => {
-            return flight.getData()
-        })
+        const allFlights = this.flights.flat()
+        const formatFlights = this.flights.map((flight) => flight.getData())
         // allFlights is an array of fligts objects
-        for (const key in allFlights) {
-            totalPassengers += allFlights[key].passengers.length
+        for (const flight in allFlights) {
+            totalPassengers += allFlights[flight].passengers.length
         }
         return 'Airport: ' + this.name + ', ' + 'total passengers: ' + totalPassengers + '\n' + formatFlights
     }
