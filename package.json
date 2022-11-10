@@ -1,0 +1,28 @@
+{
+  "name": "airport-oop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "airport.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanljusic10/Airport-OOP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefanljusic10/Airport-OOP/issues"
+  },
+  "homepage": "https://github.com/stefanljusic10/Airport-OOP#readme",
+  "dependencies": {
+    "webpack": "^5.75.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack-cli": "^4.10.0"
+  }
+}
