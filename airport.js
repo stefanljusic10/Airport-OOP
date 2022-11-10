@@ -29,7 +29,7 @@ function Flight(relation, date){
     }
     this.getData = () => {
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        const formatDate = '  ' + monthNames[this.date.getMonth()] + ' ' + this.date.getDay() + ', ' + this.date.getFullYear() +', ' + this.relation + '\n'
+        const formatDate = `  ${monthNames[this.date.getMonth()]} ${this.date.getDay()}, ${this.date.getFullYear()}, ${this.relation}\n`
         return formatDate + this.passengers.map((pass) => `    ${pass.getData()}\n`).join('')
     }
 }
@@ -48,7 +48,7 @@ function Airport(){
         for (const flight in allFlights) {
             totalPassengers += allFlights[flight].passengers.length
         }
-        return 'Airport: ' + this.name + ', ' + 'total passengers: ' + totalPassengers + '\n' + formatFlights
+        return `Airport: ${this.name}, total passengers: ${totalPassengers}\n${formatFlights}`
     }
 }
 
