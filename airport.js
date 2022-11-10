@@ -24,15 +24,14 @@ function Flight(relation, date){
     this.relation = relation
     this.date = date
     this.passengers = []
-
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const formatDate = '  ' + monthNames[this.date.getMonth()] + ' ' + this.date.getDay() + ', ' + this.date.getFullYear() +', ' + this.relation + '\n'
-    
     this.addPassenger = (passenger) => {
         this.passengers.push(passenger)
     }
-    
-    this.getData = () => formatDate + this.passengers.map((pass) => `    ${pass.getData()}\n`).join('')
+    this.getData = () => {
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const formatDate = '  ' + monthNames[this.date.getMonth()] + ' ' + this.date.getDay() + ', ' + this.date.getFullYear() +', ' + this.relation + '\n'
+        return formatDate + this.passengers.map((pass) => `    ${pass.getData()}\n`).join('')
+    }
 }
 
 function Airport(){
@@ -79,7 +78,7 @@ function Airport(){
     let seatOne = new Seat(17, 'b')
     let seatTwo = new Seat('65', 'g')
     let seatThree = new Seat(88, 'b')
-    let seatFour = new Seat(false, 'e')
+    let seatFour = new Seat()
     let seatFive = new Seat(91, 'e')
     let seatSix = new Seat(90, false)
     
