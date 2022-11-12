@@ -1,5 +1,7 @@
 # AirportOOP-typescript-webpack
-
+  
+## run app -> node ./dist/index
+  
 ### Create classes with properties representing the following:
 ● Person - name, surname  
 ● Seat - number, category (can be 'b'; for business or 'e' for economy)  
