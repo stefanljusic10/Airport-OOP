@@ -10,13 +10,13 @@
 ● Airport - name (should be a hard-coded value &quot;Nikola Tesla&quot;), list of flights  
   
 ### Tips
-If category is not provided for Seat, assume it’s economy (“e”).
+If category is not provided for Seat, assume it’s economy (“e”).    
 If seat number is not provided, assign a random number between 10 and 100.  
-Add getData method to Person. It should return a formatted string containing the name and surname of the person.
+Add getData method to Person. It should return a formatted string containing the name and surname of the person.  
       ex. 'John', 'Snow' -> 'John Snow'
-Add getData method to Seat. It should return a formatted string containing a seat number and category.
+Add getData method to Seat. It should return a formatted string containing a seat number and category.  
       ex. 12, 'B' -> '12, B'
-Add getData method to Passenger. It should return a formatted string containing a seat number, category letter (always in uppercase), a name and surname. To display seat data, use getData method of the Seat object. The same goes for the person data.
+Add getData method to Passenger. It should return a formatted string containing a seat number, category letter (always in uppercase), a name and surname. To display seat data, use getData method of the Seat object. The same goes for the person data.  
       ex. personObj, seatObj -> 12, B, John Snow
 Add addPassenger method to Flight. It should receive Passenger and add the passenger to the passenger list of a given flight.
 Add addFlight method to Airport. It should add the flight to the list of flights of the airport.
